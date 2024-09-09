@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--primary-text);
+    background-color: var(--primary-background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --primary-color: #1e90ff;      /*Cor de Destaque/Links:*/
+    --secondary-color: #e0e0e0 ;   /* Cor de Botões e Elementos Interativos:*/    
+    --primary-background: #f5f5f5; /* Fundo Principal:*/
+    --secondary-background: #fff;  /* Cor de Fundo de Seções ou Cartões:*/
+    --primary-text: #333333;       /*Cor de Texto Principal:*/
+    --secondary-text:  #666666;    /*Cor de Texto Secundário:*/ 
+    --separadores:  #dddddd;       /*Cor de Bordas e Separadores:*/
+    --erro-color: #ff6f6f;         /*Cor de Erro ou Avisos: */
+    --sucess-color: #4caf50;       /*Cor de Sucesso ou Mensagens Positivas:*/
+}
+
+.dark-theme{
+    --primary-color: #1e90ff ;       /*Cor de Destaque/Links:*/
+    --secondary-color: #3a3a3a  ;    /* Cor de Botões e Elementos Interativos:*/    
+    --primary-background: #1e1e1e;   /* Fundo Principal:*/
+    --secondary-background: #2c2c2c; /* Cor de Fundo de Seções ou Cartões:*/
+    --primary-text: #e0e0e0;         /*Cor de Texto Principal:*/
+    --secondary-text:  #b0b0b0;      /*Cor de Texto Secundário:*/ 
+    --separadores:  #444444;         /*Cor de Bordas e Separadores:*/
+    --erro-color: #ff6f6f;           /*Cor de Erro ou Avisos: */
+    --sucess-color: #4caf50;         /*Cor de Sucesso ou Mensagens Positivas:*/
+}
