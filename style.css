@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+h1{
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
 body{
     color: var(--primary-text);
     background-color: var(--primary-background);
@@ -29,7 +35,56 @@ body{
     --secondary-background: #2c2c2c; /* Cor de Fundo de Seções ou Cartões:*/
     --primary-text: #e0e0e0;         /*Cor de Texto Principal:*/
     --secondary-text:  #b0b0b0;      /*Cor de Texto Secundário:*/ 
-    --separadores:  #444444;         /*Cor de Bordas e Separadores:*/
+    --separadores:  #fff;         /*Cor de Bordas e Separadores:*/
     --erro-color: #ff6f6f;           /*Cor de Erro ou Avisos: */
     --sucess-color: #4caf50;         /*Cor de Sucesso ou Mensagens Positivas:*/
 }
+
+.bnt-theme{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    color: var(--primary-color);
+    padding: .5rem 1rem;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: .3rem;
+}
+
+.container-play{
+    width: 400px;
+    height: 350px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 3fr 3fr 3fr;
+}
+
+.box{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.box-1, .box-2, .box-4, .box-5, .box-7, .box-8{
+    border-right: 2px solid var(--primary-text);
+}
+.box-1, .box-2, .box-3, .box-4, .box-5, .box-6{
+    border-bottom: 2px solid var(--primary-text);
+}
+
+.box-1{grid-column: 1 / 2; grid-row: 1 / 2;}
+.box-2{grid-column: 2 / 3; grid-row: 1 / 2;}
+.box-3{grid-column: 3 / 4; grid-row: 1 / 2;}
+
+.box-4{grid-column: 1 / 2; grid-row: 2 / 3;}
+.box-5{grid-column: 2 / 3; grid-row: 2 / 3;}
+.box-6{grid-column: 3 / 4; grid-row: 2 / 3;}
+
+.box-7{grid-column: 1 / 2; grid-row: 3 / 4;}
+.box-8{grid-column: 2 / 3; grid-row: 3 / 4;}
+.box-9{grid-column: 3 / 4; grid-row: 3 / 4;}

@@ -6,3 +6,12 @@ function toggleTheme(){
         body.classList.add('dark-theme')
     }
 }
+
+const box = document.getElementsByClassName('box')
+for (let e of box) {
+    e.addEventListener('click', () => pushXorO(e))
+}
+
+function pushXorO(e){
+    e.textContent = 'x'
+}
