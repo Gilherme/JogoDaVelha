@@ -62,13 +62,7 @@ body{
     grid-template-rows: 3fr 3fr 3fr;
 }
 
-.box{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
+
 
 .box-1, .box-2, .box-4, .box-5, .box-7, .box-8{
     border-right: 2px solid var(--primary-text);
@@ -88,3 +82,32 @@ body{
 .box-7{grid-column: 1 / 2; grid-row: 3 / 4;}
 .box-8{grid-column: 2 / 3; grid-row: 3 / 4;}
 .box-9{grid-column: 3 / 4; grid-row: 3 / 4;}
+
+.box{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: font-size 1s ease;
+}
+
+@keyframes blink {
+    0% {
+        font-size: 4rem;
+        color: var(--primary-color);
+    }
+    50% {
+        font-size: 3rem;
+        color: var(--primary-color);
+    }
+    100% {
+        font-size: 4rem;
+        color: var(--primary-color);
+    }
+}
+
+
+div.el-champion{
+    animation: blink 1s infinite;
+}
