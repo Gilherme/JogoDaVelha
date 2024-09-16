@@ -8,9 +8,12 @@
 </head>
 <body class="dark-theme">
 
-    <h1>Jogo da velha</h1> 
-    <button class="bnt-theme" onclick="toggleTheme()">Mudar tema</button>
+    <header>
+        <h1>Jogo da velha</h1>
+        <button class="bnt-theme" onclick="toggleTheme()">Mudar tema</button>
+    </header>
 
+   <div class="container">
     <section class="container-play">
         <div index="1" class="box box-1"></div>
         <div index="2" class="box box-2"></div>
@@ -22,6 +25,13 @@
         <div index="8" class="box box-8"></div>
         <div index="9" class="box box-9"></div>
     </section>
+    <div class="container-players">
+        <button class="btn-player">X</button>
+        <button class="btn-player">O</button>
+    </div>
+   </div>  
+    
+
     
     <script src="script.js"></script>
 </body>
