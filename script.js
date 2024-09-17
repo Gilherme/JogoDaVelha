@@ -22,11 +22,11 @@ const restartGame = () => {
     selectedElements = [];
     winnerFound = false;
     for (let e of box) {
+        e.classList.remove('el-champion')
         e.textContent = ''
     }
 }
 const theEndOld = () => {
-    alert('fim do jogo');
     restartGame();
 };
 
@@ -35,13 +35,12 @@ function championsShow(moves, player) {
         let el = document.getElementsByClassName(`box-${element}`)[0]
         el.classList.add("el-champion")
     });
-    setTimeout(() => alert("Ganhador: " + player), 2000)
+    setTimeout(() => restartGame(), 3000)
 }
 
 function checkForChampion(moves, player) {
 
     if (!(moves.length >= 3)) return;
-    console.log(moves)
     for (let el of winCombinations) {
         const isAchampion = el.every(element => moves.includes(element));
         if (isAchampion) {
@@ -50,6 +49,19 @@ function checkForChampion(moves, player) {
             championsShow(winningMoves, player)
             break;
         }
+    }
+}
+
+function addClassPlayerActive(p) {
+    const x = document.getElementsByClassName('X')[0];
+    const o = document.getElementsByClassName('O')[0];
+
+    if(p === "O"){
+        o.classList.remove('btn-player-active')
+        x.classList.add('btn-player-active')
+    }else if (p === "X") {
+        x.classList.remove('btn-player-active')
+        o.classList.add('btn-player-active')
     }
 }
 
@@ -62,17 +74,18 @@ function pushXorO(e) {
     else { selectedElements.push(move); numberOfMovies++; }
 
     if (currentPlayer == "O") {
+        addClassPlayerActive("X")
         e.textContent = 'X'; currentPlayer = "X";
         movesX.push(move);
         checkForChampion(movesX, "X");
     }
     else if (currentPlayer == "X") {
+        addClassPlayerActive("O")
         e.textContent = "O"; currentPlayer = "O";
         movesO.push(move);
         checkForChampion(movesO, "O");
     }
-
-    else if (numberOfMovies == 9) {
+    if (numberOfMovies == 9) {
         setTimeout(theEndOld, 400);
     }
 }
@@ -90,6 +103,12 @@ for (let e of btnPlayer) {
 function selectPlayer(e){
     
     if (numberOfMovies === 0){
+        const player = e.textContent;
+        currentPlayer = player === "O" ? "X" : "O"
+        
+        const btnPlayer = [...document.getElementsByClassName('btn-player')]
+        btnPlayer.forEach(e => e.classList.remove('btn-player-active'))
+
         e.classList.add('btn-player-active')
     }
 }
